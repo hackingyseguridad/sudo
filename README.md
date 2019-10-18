@@ -2,7 +2,7 @@
 
 # CVE-2017-XXXX hackingyseguridad
 
-#1.- Para editar el fichero sudiers sin problemas 
+#1.- Para editar el fichero sudoers sin problemas 
 
 $chmod 777 /etc/sudoers    
 
