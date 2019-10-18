@@ -1,3 +1,5 @@
+<img style="float:left" alt="netspy logo" src="https://github.com/hackingyseguridad/sudo/blob/master/sudo.png">
+
 #0.- Por defecto /etc/sudoers tiene permisos chmod 775. 
 
 Intentamos para editar sin problemas el fichero sudoers $chmod 777 /etc/sudoers  y volvemos a restablecer después los privilegios chmod 755 /etc/sudoers
