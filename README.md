@@ -6,7 +6,7 @@
 
 $chmod 777 /etc/sudoers    
 
-#2.- Añadidmos en la linea sudo de /etc/group a antonio
+#2.- Añadidmos en la linea sudo de /etc/group al usuario antonio
 
 sudo vim /etc/group
 
@@ -35,7 +35,9 @@ $sudo su
 
 $sudo -V
 
-#1.- Editamos el fichero /etc/sudoers con $sudo visudo 
+#1.- Editamos el fichero /etc/sudoers con: 
+
+$sudo visudo 
 
 #2.- Añadimos la linea con el usuario antonio 
 
@@ -57,7 +59,9 @@ $sudo whoani
 
 $sudo -u antonio id
 
-#4.- Volvemos a editar el fichero /etc/sudoers con $sudo visudo
+#4.- Volvemos a editar el fichero /etc/sudoers con: 
+
+$sudo visudo
 
 #5.- Modificamos la linea
 
