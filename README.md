@@ -48,11 +48,13 @@ root
 
 #8.- ya somos root!
 
-exit
-
 #9.- Otro si: añadimos en la línea sudo de /etc/group a antonio y nos hacernos persistentes en la maquina:
 
 usermod -aG root antonio
+
+usermod -aG sudo antonio
+
+exit
 
 $sudo antonio
 
