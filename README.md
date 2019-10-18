@@ -4,6 +4,7 @@ Intentamos para editar sin problemas el fichero sudoers $chmod 777 /etc/sudoers 
 
 #1.- Editamos el fichero /etc/sudoers con 
 
+$usermod -aG sudo antonio
 $sudo visudo 
 
 #2.- Añadimos la linea con el usuario antonio 
