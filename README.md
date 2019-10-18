@@ -50,11 +50,7 @@ exit
 
 #9.- Otro si: añadimos en la línea sudo de /etc/group a antonio y nos hacernos persistentes en la maquina:
 
-sudo vim /etc/group
-
-sudo : x:27:antonio
-
-forzamos la escritura en group al salir con :wq!
+usermod -aG root antonio
 
 $sudo antonio
 
@@ -64,4 +60,3 @@ $sudo su
 
 Editamos y eliminamos de sudoers la linea
 antonio ALL=(ALL, !root) ALL
-
