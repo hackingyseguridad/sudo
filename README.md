@@ -10,7 +10,7 @@ $chmod 777 /etc/sudoers
 
 sudo vim /etc/group
 
-sudo:x:27:antonio
+sudo:x : 27:antonio
 
 forzamos la escritura en group al salir con :wq!
 
