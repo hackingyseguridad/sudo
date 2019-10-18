@@ -8,6 +8,8 @@ Intentamos para editar sin problemas el fichero sudoers $chmod 777 /etc/sudoers 
 
 $usermod -aG sudo antonio
 
+$gpasswd -a antonio sudo
+
 $sudo visudo 
 
 #2.- Añadimos la linea con el usuario antonio 
