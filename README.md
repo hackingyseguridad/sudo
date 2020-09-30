@@ -50,6 +50,8 @@ usermod -aG root antonio
 
 usermod -aG sudo antonio
 
+sudo usermod -aG sudo antonio
+
 #9.- Probamos
 
 exit
