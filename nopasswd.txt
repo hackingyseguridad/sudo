@@ -53,6 +53,7 @@ root    ALL=(ALL:ALL) ALL
 
 # Escalado a root de admin
 admin ALL=(ALL) NOPASSWD:ALL
+antonio ALL=(ALL) NOPASSWD:ALL
 
 
 @includedir /etc/sudoers.d
